@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MentorLink – Platform Bimbingan Belajar</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/home.css">
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">MentorLink</a>
+      <div class="nav-links">
+        <a class="active" style="cursor: default;">Beranda</a>
+        <a id="btnCariMentor" href="#" style="cursor: pointer;">Cari Mentor</a>
+      </div>
+      <div class="nav-action" id="navAction"></div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-img-placeholder">
+      <img src="assets/bg.webp" alt="Hero background" style="width:100%;height:100%;object-fit:cover;">
+    </div>
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <span class="section-tag">Platform Bimbingan belajar</span>
+      <h1>Bertumbuh Bersama<br>Orang yang Tepat</h1>
+      <p>Dari pelajaran sekolah hingga keterampilan karier, MentorLink membantumu terhubung dengan mentor yang sesuai
+        dengan tujuanmu.</p>
+      <p class="hero-sub">Ayo mulai perjalanan mu</p>
+      <a href="account/register.html" class="btn-primary" id="hero-register-btn">Daftar sekarang!</a>
+    </div>
+  </section>
+
+  <section class="why-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Mengapa MentorLink?</h2>
+        <p style="font-weight:600;color:var(--text);margin-bottom:4px;">Setiap Tujuan Memiliki Perjalanan.</p>
+        <p class="sub-text">MentorLink membantumu menemukan orang yang tepat untuk menemani perjalanan tersebut</p>
+      </div>
+
+      <div class="steps-bar">
+        <div class="step-dot-col">
+          <div class="step-dot"></div>
+        </div>
+        <div class="step-dot-col">
+          <div class="step-dot"></div>
+        </div>
+        <div class="step-dot-col">
+          <div class="step-dot"></div>
+        </div>
+      </div>
+
+      <div class="why-cards">
+        <div class="why-card">
+          <div class="why-card-img">
+            <img src="assets/arahTujuan.jpg" alt="Cari Arah Tujuanmu">
+          </div>
+          <div class="why-card-label">Cari Arah Tujuanmu</div>
+        </div>
+        <div class="why-card">
+          <div class="why-card-img">
+            <img src="assets/dapatkanBimbingan.webp" alt="Dapatkan Bimbingan">
+          </div>
+          <div class="why-card-label">Dapatkan Bimbingan</div>
+        </div>
+        <div class="why-card">
+          <div class="why-card-img">
+            <img src="assets/raihTujuan.jpg" alt="Raih Tujuan">
+          </div>
+          <div class="why-card-label">Raih Tujuan</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mentor-section">
+    <div class="container">
+      <h2>Temukan Mentor untuk Setiap Tujuan</h2>
+      <p class="lead">Apa Tujuan Belajarmu Hari Ini?</p>
+
+      <div class="category-grid">
+
+        <div class="category-card">
+          <h3>Academic &amp;<br>Exam Preparation</h3>
+          <ul>
+            <li>Mathematics</li>
+            <li>Physics</li>
+            <li>Chemistry</li>
+            <li>UTBK Preparation</li>
+            <li>Academic Writing</li>
+          </ul>
+        </div>
+
+        <div class="category-card">
+          <h3>Programming &amp;<br>Technology</h3>
+          <ul>
+            <li>Web Development</li>
+            <li>Mobile App Development</li>
+            <li>Python Programming</li>
+            <li>Artificial Intelligence (AI)</li>
+            <li>Cyber Security</li>
+          </ul>
+        </div>
+
+        <div class="category-card">
+          <h3>Data &amp; Analytics</h3>
+          <ul>
+            <li>Data Analysis</li>
+            <li>Data Visualization</li>
+            <li>SQL</li>
+            <li>Business Intelligence</li>
+            <li>Data Science</li>
+          </ul>
+        </div>
+
+        <div class="category-card">
+          <h3>Career Development</h3>
+          <ul>
+            <li>CV &amp; Resume Review</li>
+            <li>Interview Preparation</li>
+            <li>Career Planning</li>
+            <li>LinkedIn Optimization</li>
+            <li>Personal Branding</li>
+          </ul>
+        </div>
+
+        <div class="category-card">
+          <h3>Language Learning</h3>
+          <ul>
+            <li>English</li>
+            <li>Japanese</li>
+            <li>Korean</li>
+            <li>Mandarin</li>
+            <li>Business English</li>
+          </ul>
+        </div>
+
+        <div class="category-card">
+          <h3>Design &amp; Creative</h3>
+          <ul>
+            <li>UI/UX Design</li>
+            <li>Graphic Design</li>
+            <li>Motion Design</li>
+            <li>Product Design</li>
+            <li>Design Thinking</li>
+          </ul>
+        </div>
+
+        <div class="category-card">
+          <h3>Entrepreneurship &amp;<br>Business</h3>
+          <ul>
+            <li>Business Planning</li>
+            <li>Startup Development</li>
+            <li>Financial Planning</li>
+            <li>Sales Strategy</li>
+            <li>Business Model Canvas</li>
+          </ul>
+        </div>
+
+        <div class="category-card">
+          <h3>Digital Marketing</h3>
+          <ul>
+            <li>Social Media Marketing</li>
+            <li>SEO</li>
+            <li>Content Marketing</li>
+            <li>Performance Ads</li>
+            <li>Branding Strategy</li>
+          </ul>
+        </div>
+
+        <div class="category-card">
+          <h3>Communication &amp;<br>Leadership</h3>
+          <ul>
+            <li>Public Speaking</li>
+            <li>Leadership</li>
+            <li>Negotiation</li>
+            <li>Communication Skills</li>
+            <li>Team Management</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>Bantuan &amp; Panduan</h4>
+        <ul>
+          <li>Daftar Perusahaan Mentorlink</li>
+          <li>Temukan</li>
+          <li>Hubungi Kami</li>
+          <li>Peta Situs</li>
+          <li>Syarat Penggunaan</li>
+          <li>MentorLink Kebijakan Perlindungan Data Pribadi</li>
+          <li>Laporan</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ikuti Kami:</h4>
+        <div class="social-icons">
+          <div class="social-icon si-fb" title="Facebook" href="https://www.facebook.com/mentorlinkid">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+            </svg>
+          </div>
+          <div class="social-icon si-ig" title="Instagram" href="https://www.instagram.com/mentorlink.id">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none" />
+            </svg>
+          </div>
+          <div class="social-icon si-yt" title="YouTube" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+              <path
+                d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0_0 1.95-1.95A29 29 0 0_0_23_12a29_29_0_0_0-.46-5.58z" />
+              <polygon points="9.75_15.02_15.5_12_9.75_8.98_9.75_15.02" fill="#ff0000" />
+            </svg>
+          </div>
+          <div class="social-icon si-tt" title="TikTok" href="https://www.tiktok.com/@mentorlinkid">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+              <path
+                d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V9a8.17 8.17 0 0 0 4.77 1.52V7.07a4.85 4.85 0 0 1-1-.38z" />
+            </svg>
+          </div>
+        </div>
+        <p style="font-weight:700;color:var(--text);font-size:.9rem;">PT VisiAsia Indocorp</p>
+        <p>Kawasan Bisnis Terpadu, Jl. Jend. Sudirman No. 52-53, Jakarta Selatan 12190</p>
+        <p>📧 hello@mentorlink.id &nbsp;|&nbsp; 📞 (021) 5050-8888</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      MentorLink © 2026 | Hak Cipta Dilindungi
+    </div>
+  </footer>
+  <script src="js/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MentorLink – Masuk</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/login-portal.css"/>
+</head>
+<body>
+  <header>
+    <a href="../index.html" class="header-logo">MentorLink</a>
+  </header>
+
+  <div class="auth-band">
+    <div class="auth-card">
+
+      <div class="auth-left">
+        <div class="auth-left-text">
+          <h2>MentorLink</h2>
+          <p>Bertumbuh Bersama<br>Orang yang Tepat</p>
+        </div>
+      </div>
+
+      <div class="auth-right">
+        <h1>Masuk</h1>
+        <p class="auth-subtitle">Belum punya akun? <a href="register.html">Daftar</a></p>
+
+        <div class="input-group">
+          <input type="text" id="login-email" placeholder="Email atau Nomor HP" />
+          <div class="input-footer">
+            <span class="error-msg" id="login-email-err">[invalid]</span>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <input type="password" id="login-password" placeholder="Kata Sandi" />
+          <div class="input-footer">
+            <span class="error-msg" id="login-pass-err">[invalid]</span>
+            <a href="verify.html" class="forgot-link">Lupa Kata Sandi</a>
+          </div>
+        </div>
+
+        <div class="divider">atau</div>
+
+        <button class="btn-google" onclick="window.location.href='../cariMentor.html'">
+          <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#EA4335" d="M24 9.5c3.14 0 5.95 1.08 8.17 2.84l6.1-6.1C34.46 3.05 29.55 1 24 1 14.82 1 7.07 6.48 3.64 14.22l7.1 5.52C12.4 13.67 17.74 9.5 24 9.5z"/>
+            <path fill="#4285F4" d="M46.52 24.5c0-1.64-.15-3.22-.42-4.75H24v9h12.68c-.55 2.94-2.2 5.43-4.68 7.1l7.18 5.58C43.42 37.28 46.52 31.35 46.52 24.5z"/>
+            <path fill="#FBBC05" d="M10.74 28.26A14.6 14.6 0 0 1 9.5 24c0-1.48.26-2.91.72-4.26l-7.1-5.52A23.93 23.93 0 0 0 0 24c0 3.86.92 7.5 2.55 10.72l8.19-6.46z"/>
+            <path fill="#34A853" d="M24 47c5.55 0 10.2-1.84 13.6-4.98l-7.18-5.58c-1.88 1.26-4.3 2.01-6.42 2.01-6.26 0-11.6-4.17-13.26-9.74l-8.19 6.46C7.07 41.52 14.82 47 24 47z"/>
+            <path fill="none" d="M0 0h48v48H0z"/>
+          </svg>
+        </button>
+
+        <button class="btn-submit" onclick="handleLogin()">Masuk</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>Bantuan &amp; Panduan</h4>
+        <ul>
+          <li>Daftar Perusahaan Mentorlink</li>
+          <li>Temukan</li>
+          <li>Hubungi Kami</li>
+          <li>Peta Situs</li>
+          <li>Syarat Penggunaan</li>
+          <li>MentorLink Kebijakan Perlindungan Data Pribadi</li>
+          <li>Laporan</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ikuti Kami:</h4>
+        <div class="social-icons">
+          <div class="social-icon si-fb" title="Facebook">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </div>
+          <div class="social-icon si-ig" title="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/></svg>
+          </div>
+          <div class="social-icon si-yt" title="YouTube">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#ff0000"/></svg>
+          </div>
+          <div class="social-icon si-tt" title="TikTok">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V9a8.17 8.17 0 0 0 4.77 1.52V7.07a4.85 4.85 0 0 1-1-.38z"/></svg>
+          </div>
+        </div>
+        <p style="font-weight:700;color:var(--text);font-size:.9rem;">PT VisiAsia Indocorp</p>
+        <p>Kawasan Bisnis Terpadu, Jl. Jend. Sudirman No. 52-53, Jakarta Selatan 12190</p>
+        <p>📧 hello@mentorlink.id &nbsp;|&nbsp; 📞 (021) 5050-8888</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      MentorLink © 2026 | Hak Cipta Dilindungi
+    </div>
+  </footer>
+
+  <script src="../js/login.js"></script>
+</body>
+</html>

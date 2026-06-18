@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MentorLink – Booking Sesi</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/booking.css">
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">MentorLink</a>
+      <div class="nav-links">
+        <a href="index.html">Beranda</a>
+        <a href="cariMentor.html" class="nav-link-tutor">Cari Mentor</a>
+      </div>
+      <div class="nav-action">
+        <a id="btn-akun" href="student/editProfile.html" class="btn-nav">Akun</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="booking-grid">
+      <div class="panel panel-blue schedule-panel">
+        <p class="panel-title">Pilih Jadwal</p>
+
+        <div class="date-chips">
+          <button class="date-chip active" onclick="selectDate(this)">Senin 10 Juni</button>
+          <button class="date-chip" onclick="selectDate(this)">Selasa 11 Juni</button>
+          <button class="date-chip" onclick="selectDate(this)">Rabu 12 Juni</button>
+        </div>
+
+        <hr class="divider">
+
+        <p class="section-label">Jam Tersedia</p>
+        <div class="time-chips">
+          <button class="time-chip active" onclick="selectTime(this)">9:00</button>
+          <button class="time-chip" onclick="selectTime(this)">10:00</button>
+          <button class="time-chip" onclick="selectTime(this)">12:00</button>
+          <button class="time-chip unavailable" onclick="selectTime(this)">14:00</button>
+        </div>
+      </div>
+
+      <div class="panel panel-yellow mentor-panel">
+        <div class="mentor-header">
+          <div class="mentor-avatar">
+            <img
+              id="booking-mentor-photo"
+              src=""
+              alt="">
+          </div>
+          <div class="mentor-info">
+            <p
+                class="mentor-name"
+                id="booking-mentor-name">
+            </p>
+            <p
+                class="mentor-role"
+                id="booking-mentor-role">
+            </p>
+            <div class="mentor-rating">
+              <span
+                  class="rating-badge"
+                  id="booking-mentor-rating">
+              </span>
+              <span>(18 ulasan) | 10 tahun pengalaman</span>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">⚡ Figma</span>
+              <span class="skill-tag blue">UI/UX Design</span>
+              <span class="skill-tag">Portfolio Review</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mentor-details">
+          <div class="detail-row">
+            <span class="detail-label">Durasi Sesi</span>
+            <span class="detail-value">60 menit</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Harga</span>
+            <span
+                class="detail-value"
+                id="booking-mentor-price">
+            </span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Platform</span>
+            <span class="detail-value">Video Call</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel panel-blue session-panel">
+        <p class="panel-title">Pilih Jenis Sesi Mentoring</p>
+
+        <div class="session-options">
+          <label class="session-option">
+            <input type="checkbox">
+            <div class="session-option-text">
+              <p class="session-option-name">1-on-1 Mentoring</p>
+              <p class="session-option-desc">Diskusi personal sesuai kebutuhan dan tujuan belajarmu.</p>
+            </div>
+          </label>
+
+          <label class="session-option">
+            <input type="checkbox">
+            <div class="session-option-text">
+              <p class="session-option-name">Portfolio Review</p>
+              <p class="session-option-desc">Mendapatkan masukan langsung untuk portofolio atau project.</p>
+            </div>
+          </label>
+
+          <label class="session-option">
+            <input type="checkbox">
+            <div class="session-option-text">
+              <p class="session-option-name">Mock Review</p>
+              <p class="session-option-desc">Latihan wawancara kerja dengan simulasi dan feedback mentor.</p>
+            </div>
+          </label>
+        </div>
+
+        <div class="mode-row">
+          <label class="mode-option">
+            <input type="checkbox"> Online
+          </label>
+          <label class="mode-option">
+            <input type="checkbox"> Offline
+          </label>
+        </div>
+      </div>
+
+      <div class="panel panel-yellow goal-panel">
+        <p class="panel-title">Apa yang ingin kamu capai dari sesi ini?</p>
+        <textarea
+          class="goal-textarea"
+          placeholder="Contoh: Saya ingin meminta review portofolio UI/UX dan mempersiapkan interview untuk posisi Product Designer."
+          rows="5"
+        ></textarea>
+        <p class="goal-hint">Catatan ini akan membantu mentor mempersiapkan sesi dengan lebih baik.</p>
+      </div>
+
+    </div>
+
+    <div class="cta-row">
+    <a
+        id="btn-payment"
+        href="#"
+        class="btn-pay"
+        onclick="proceedToPayment(); return false;">
+        Lanjut ke Pembayaran
+    </a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>Bantuan &amp; Panduan</h4>
+        <ul>
+          <li>Daftar Perusahaan Mentorlink</li>
+          <li>Temukan</li>
+          <li>Hubungi Kami</li>
+          <li>Peta Situs</li>
+          <li>Syarat Penggunaan</li>
+          <li>MentorLink Kebijakan Perlindungan Data Pribadi</li>
+          <li>Laporan</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ikuti Kami:</h4>
+        <div class="social-icons">
+          <div class="social-icon si-fb" title="Facebook">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </div>
+          <div class="social-icon si-ig" title="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/></svg>
+          </div>
+          <div class="social-icon si-yt" title="YouTube">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#ff0000"/></svg>
+          </div>
+          <div class="social-icon si-tt" title="TikTok">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V9a8.17 8.17 0 0 0 4.77 1.52V7.07a4.85 4.85 0 0 1-1-.38z"/></svg>
+          </div>
+        </div>
+        <p style="font-weight:700;color:var(--text);font-size:.9rem;">PT VisiAsia Indocorp</p>
+        <p>Kawasan Bisnis Terpadu, Jl. Jend. Sudirman No. 52-53, Jakarta Selatan 12190</p>
+        <p>📧 hello@mentorlink.id &nbsp;|&nbsp; 📞 (021) 5050-8888</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      MentorLink © 2026 | Hak Cipta Dilindungi
+    </div>
+  </footer>
+
+  <script src="js/booking.js"></script>
+
+</body>
+</html>

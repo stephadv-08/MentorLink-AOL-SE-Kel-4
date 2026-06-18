@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MentorLink – Pembayaran</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/payment.css">
+</head>
+
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">MentorLink</a>
+      <div class="nav-links">
+        <a href="index.html">Beranda</a>
+        <a href="cariMentor.html" class="nav-link-tutor">Cari Mentor</a>
+      </div>
+      <div class="nav-action">
+        <a id="btn-akun" href="student/editProfile.html" class="btn-nav">Akun</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="pay-card">
+
+      <div class="pay-icon" id="pay-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+          stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10" />
+          <path
+            d="M12 6v12M9 9.5c0-1.4 1.3-2.5 3-2.5s3 1.1 3 2.5-1.3 2.5-3 2.5-3 1.1-3 2.5S10.7 17 12 17s3-1.1 3-2.5" />
+        </svg>
+      </div>
+
+      <div class="screen active" id="screen-1">
+        <h1>Pilih metode pembayaranmu</h1>
+        <p class="sub">Untuk mulai langganan sekarang.</p>
+
+        <div class="method-list">
+          <div class="method-row" onclick="goTo('screen-card')">
+            <span>Kartu kredit atau debit</span>
+            <div class="method-right">
+              <div class="method-logos">
+                <div class="logo-badge lb-mc">MC</div>
+                <div class="logo-badge lb-v">VISA</div>
+                <div class="logo-badge lb-gpn">GPN</div>
+              </div>
+              <div class="chevron">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="method-row" onclick="goTo('screen-ewallet')">
+            <span>Dompet digital</span>
+            <div class="method-right">
+              <div class="method-logos">
+                <div class="logo-badge lb-go">GoPay</div>
+                <div class="logo-badge lb-ovo">OVO</div>
+                <div class="logo-badge lb-dana">DANA</div>
+                <div class="logo-badge lb-sp">ShopeePay</div>
+              </div>
+              <div class="chevron">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- implement qris -->
+          <div class="method-row" onclick="goTo('screen-qris')">
+            <span>QRIS</span>
+            <div class="method-right">
+              <div class="method-logos">
+                <div class="logo-badge lb-qris" style="font-size:.7rem;padding:0 10px;">QRIS</div>
+              </div>
+              <div class="chevron">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="method-row" onclick="goTo('screen-va')">
+            <span>Virtual Account</span>
+            <div class="method-right">
+              <div class="method-logos">
+                <div class="logo-badge lb-bca">BCA</div>
+                <div class="logo-badge lb-bni">BNI</div>
+                <div class="logo-badge lb-mdr">Mandiri</div>
+              </div>
+              <div class="chevron">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="screen" id="screen-card">
+        <h1>Isi rincian pembayaran</h1>
+        <a class="back-btn" onclick="goTo('screen-1')">
+          Kembali
+        </a>
+
+        <div class="input-group">
+          <div class="field">
+            <input type="text" placeholder="Nomor kartu" maxlength="19" oninput="formatCard(this)">
+            <div class="field-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="1" y="4" width="22" height="16" rx="2" />
+                <line x1="1" y1="10" x2="23" y2="10" />
+              </svg>
+            </div>
+          </div>
+          <div class="input-row">
+            <div class="field">
+              <input type="text" placeholder="Kadaluwarsa" maxlength="5" oninput="formatExpiry(this)">
+            </div>
+            <div class="field">
+              <input type="password" placeholder="CVV" maxlength="4">
+            </div>
+          </div>
+          <div class="field">
+            <input type="text" placeholder="Nama yang tercantum pada kartu">
+          </div>
+        </div>
+
+        <p class="terms-text">Dengan membayar, saya menyetujui <a href="#">syarat dan ketentuan</a> yang berlaku.</p>
+        <button class="btn-pay" onclick="completePayment()">Bayar sekarang</button>
+      </div>
+
+      <div class="screen" id="screen-ewallet">
+        <h1>Isi rincian pembayaran</h1>
+        <a class="back-btn" onclick="goTo('screen-1')">
+          Kembali
+        </a>
+
+        <div class="input-group">
+          <div style="position:relative;">
+            <div class="field-select" id="wallet-select" onclick="toggleDropdown('wallet-dropdown', this)">
+              <span id="wallet-label">Pilih dompet</span>
+              <div class="select-right">
+                <div class="method-logos" id="wallet-logos">
+                  <div class="logo-badge lb-go">GoPay</div>
+                  <div class="logo-badge lb-ovo">OVO</div>
+                  <div class="logo-badge lb-dana">DANA</div>
+                  <div class="logo-badge lb-sp">ShopeePay</div>
+                </div>
+                <svg class="select-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </div>
+            </div>
+            <div class="dropdown-menu" id="wallet-dropdown">
+              <div class="dropdown-item" onclick="selectWallet('GoPay','lb-go')">
+                <div class="logo-badge lb-go">GoPay</div> GoPay
+              </div>
+              <div class="dropdown-item" onclick="selectWallet('OVO','lb-ovo')">
+                <div class="logo-badge lb-ovo">OVO</div> OVO
+              </div>
+              <div class="dropdown-item" onclick="selectWallet('DANA','lb-dana')">
+                <div class="logo-badge lb-dana">DANA</div> DANA
+              </div>
+              <div class="dropdown-item" onclick="selectWallet('ShopeePay','lb-sp')">
+                <div class="logo-badge lb-sp">ShopeePay</div> ShopeePay
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <input type="tel" placeholder="Nomor telepon">
+            <div class="field-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l1.27-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <p class="terms-text">Dengan membayar, saya menyetujui <a href="#">syarat dan ketentuan</a> yang berlaku.</p>
+        <button class="btn-pay" onclick="completePayment()">Bayar sekarang</button>
+      </div>
+
+      <div class="screen" id="screen-qris">
+        <h1>Isi rincian pembayaran</h1>
+        <a class="back-btn" onclick="goTo('screen-1')">
+          Kembali
+        </a>
+
+        <div class="qr-wrap">
+          <p class="qr-label">Scan QR berikut untuk membayar</p>
+          <div class="qr-box">
+            <svg width="160" height="160" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+
+              <rect x="10" y="10" width="42" height="42" rx="4" fill="#2D3748" />
+              <rect x="17" y="17" width="28" height="28" rx="2" fill="white" />
+              <rect x="24" y="24" width="14" height="14" rx="1" fill="#2D3748" />
+
+              <rect x="108" y="10" width="42" height="42" rx="4" fill="#2D3748" />
+              <rect x="115" y="17" width="28" height="28" rx="2" fill="white" />
+              <rect x="122" y="24" width="14" height="14" rx="1" fill="#2D3748" />
+
+              <rect x="10" y="108" width="42" height="42" rx="4" fill="#2D3748" />
+              <rect x="17" y="115" width="28" height="28" rx="2" fill="white" />
+              <rect x="24" y="122" width="14" height="14" rx="1" fill="#2D3748" />
+
+              <rect x="60" y="10" width="7" height="7" fill="#2D3748" />
+              <rect x="72" y="10" width="7" height="7" fill="#2D3748" />
+              <rect x="84" y="10" width="7" height="7" fill="#2D3748" />
+              <rect x="60" y="22" width="7" height="7" fill="#2D3748" />
+              <rect x="84" y="22" width="7" height="7" fill="#2D3748" />
+              <rect x="60" y="34" width="7" height="7" fill="#2D3748" />
+              <rect x="72" y="34" width="7" height="7" fill="#2D3748" />
+              <rect x="60" y="46" width="7" height="7" fill="#2D3748" />
+              <rect x="96" y="46" width="7" height="7" fill="#2D3748" />
+              <rect x="10" y="60" width="7" height="7" fill="#2D3748" />
+              <rect x="22" y="60" width="7" height="7" fill="#2D3748" />
+              <rect x="46" y="60" width="7" height="7" fill="#2D3748" />
+              <rect x="60" y="60" width="7" height="7" fill="#2D3748" />
+              <rect x="72" y="60" width="7" height="7" fill="#2D3748" />
+              <rect x="96" y="60" width="7" height="7" fill="#2D3748" />
+              <rect x="120" y="60" width="7" height="7" fill="#2D3748" />
+              <rect x="143" y="60" width="7" height="7" fill="#2D3748" />
+              <rect x="10" y="72" width="7" height="7" fill="#2D3748" />
+              <rect x="34" y="72" width="7" height="7" fill="#2D3748" />
+              <rect x="60" y="72" width="7" height="7" fill="#2D3748" />
+              <rect x="84" y="72" width="7" height="7" fill="#2D3748" />
+              <rect x="108" y="72" width="7" height="7" fill="#2D3748" />
+              <rect x="132" y="72" width="7" height="7" fill="#2D3748" />
+              <rect x="22" y="84" width="7" height="7" fill="#2D3748" />
+              <rect x="46" y="84" width="7" height="7" fill="#2D3748" />
+              <rect x="72" y="84" width="7" height="7" fill="#2D3748" />
+              <rect x="96" y="84" width="7" height="7" fill="#2D3748" />
+              <rect x="120" y="84" width="7" height="7" fill="#2D3748" />
+              <rect x="143" y="84" width="7" height="7" fill="#2D3748" />
+              <rect x="10" y="96" width="7" height="7" fill="#2D3748" />
+              <rect x="34" y="96" width="7" height="7" fill="#2D3748" />
+              <rect x="60" y="96" width="7" height="7" fill="#2D3748" />
+              <rect x="84" y="96" width="7" height="7" fill="#2D3748" />
+              <rect x="108" y="96" width="7" height="7" fill="#2D3748" />
+              <rect x="132" y="96" width="7" height="7" fill="#2D3748" />
+              <rect x="60" y="108" width="7" height="7" fill="#2D3748" />
+              <rect x="72" y="108" width="7" height="7" fill="#2D3748" />
+              <rect x="96" y="108" width="7" height="7" fill="#2D3748" />
+              <rect x="120" y="108" width="7" height="7" fill="#2D3748" />
+              <rect x="60" y="120" width="7" height="7" fill="#2D3748" />
+              <rect x="84" y="120" width="7" height="7" fill="#2D3748" />
+              <rect x="108" y="120" width="7" height="7" fill="#2D3748" />
+              <rect x="143" y="120" width="7" height="7" fill="#2D3748" />
+              <rect x="60" y="132" width="7" height="7" fill="#2D3748" />
+              <rect x="72" y="132" width="7" height="7" fill="#2D3748" />
+              <rect x="96" y="132" width="7" height="7" fill="#2D3748" />
+              <rect x="132" y="132" width="7" height="7" fill="#2D3748" />
+              <rect x="60" y="143" width="7" height="7" fill="#2D3748" />
+              <rect x="84" y="143" width="7" height="7" fill="#2D3748" />
+              <rect x="120" y="143" width="7" height="7" fill="#2D3748" />
+            </svg>
+          </div>
+        </div>
+
+        <p class="terms-text">Dengan membayar, saya menyetujui <a href="#">syarat dan ketentuan</a> yang berlaku.</p>
+        <button class="btn-pay" onclick="completePayment()">Bayar sekarang</button>
+      </div>
+
+      <div class="screen" id="screen-va">
+        <h1>Isi rincian pembayaran</h1>
+        <a class="back-btn" onclick="goTo('screen-1')">
+          Kembali
+        </a>
+
+        <div class="input-group">
+          <div style="position:relative;">
+            <div class="field-select" id="bank-select" onclick="toggleDropdown('bank-dropdown', this)">
+              <span id="bank-label">Virtual account</span>
+              <div class="select-right">
+                <div class="method-logos">
+                  <div class="logo-badge lb-bca">BCA</div>
+                  <div class="logo-badge lb-bni">BNI</div>
+                  <div class="logo-badge lb-mdr">Mandiri</div>
+                </div>
+                <svg class="select-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </div>
+            </div>
+            <div class="dropdown-menu" id="bank-dropdown">
+              <div class="dropdown-item" onclick="selectBank('BCA Virtual Account')">
+                <div class="logo-badge lb-bca">BCA</div> BCA Virtual Account
+              </div>
+              <div class="dropdown-item" onclick="selectBank('BNI Virtual Account')">
+                <div class="logo-badge lb-bni">BNI</div> BNI Virtual Account
+              </div>
+              <div class="dropdown-item" onclick="selectBank('Mandiri Virtual Account')">
+                <div class="logo-badge lb-mdr">Mandiri</div> Mandiri Virtual Account
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="terms-text">Dengan membayar, saya menyetujui <a href="#">syarat dan ketentuan</a> yang berlaku.</p>
+        <button class="btn-pay" onclick="goTo('screen-va-result')">Bayar sekarang</button>
+      </div>
+
+      <div class="screen" id="screen-va-result">
+        <h1>Isi rincian pembayaran</h1>
+        <a class="back-btn" onclick="goTo('screen-va')">
+          Kembali
+        </a>
+
+        <div class="va-display">
+          <p class="va-label">Silahkan membayar ke nomor VA berikut</p>
+          <div class="va-number">1234 5678 9012 3456</div>
+          <p class="va-amount-label">Nominal yang perlu dibayar</p>
+          <p class="va-amount">Rp 670.500</p>
+        </div>
+
+        <p class="terms-text">Dengan membayar, saya menyetujui <a href="#">syarat dan ketentuan</a> yang berlaku.</p>
+        <button class="btn-pay" onclick="completePayment()">Selesai</button>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>Bantuan &amp; Panduan</h4>
+        <ul>
+          <li>Daftar Perusahaan Mentorlink</li>
+          <li>Temukan</li>
+          <li>Hubungi Kami</li>
+          <li>Peta Situs</li>
+          <li>Syarat Penggunaan</li>
+          <li>MentorLink Kebijakan Perlindungan Data Pribadi</li>
+          <li>Laporan</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ikuti Kami:</h4>
+        <div class="social-icons">
+          <div class="social-icon si-fb">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+            </svg>
+          </div>
+          <div class="social-icon si-ig">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none" />
+            </svg>
+          </div>
+          <div class="social-icon si-yt">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+              <path
+                d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
+              <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#ff0000" />
+            </svg>
+          </div>
+          <div class="social-icon si-tt">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+              <path
+                d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V9a8.17 8.17 0 0 0 4.77 1.52V7.07a4.85 4.85 0 0 1-1-.38z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">MentorLink © 2026 | Hak Cipta Dilindungi</div>
+  </footer>
+
+  <script src="js/payment.js"></script>
+</body>
+
+</html>

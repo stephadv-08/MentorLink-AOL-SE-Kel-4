@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cari Mentor – MentorLink</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/explore.css">
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">MentorLink</a>
+      <div class="nav-links">
+        <a href="index.html">Beranda</a>
+        <a class="active" style="cursor: default;">Cari Mentor</a>
+      </div>
+      <div class="nav-action">
+        <a id="btn-akun" href="student/editProfile.html" class="btn-nav">Akun</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="page-hero-img">
+      <img src="assets/konsul.jpg" alt="konsul" style="width:100%;height:100%;object-fit:cover;">
+    </div>
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-content">
+      <h1>Siapa Mentor yang Kamu Cari?</h1>
+      <p>Pilih bidang, skill, tujuan, atau pengalaman mentor untuk menemukan pendamping belajar yang sesuai.</p>
+    </div>
+  </section>
+
+  <div class="bidang-bar">
+    <div class="bidang-inner">
+      <p>Bidang</p>
+      <div class="bidang-tabs" id="bidangTabs">
+        <button class="bidang-tab active" data-bidang="semua">Semua</button>
+        <button class="bidang-tab" data-bidang="akademik">Akademik</button>
+        <button class="bidang-tab" data-bidang="programming">Programming</button>
+        <button class="bidang-tab" data-bidang="bahasa">Bahasa</button>
+        <button class="bidang-tab" data-bidang="entrepreneurship">Entrepreneurship</button>
+        <button class="bidang-tab" data-bidang="komunikasi">Komunikasi</button>
+        <button class="bidang-tab" data-bidang="design">Design</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-body">
+
+    <aside class="sidebar">
+
+      <div class="filter-card">
+        <div class="filter-card-head">Skill</div>
+        <div class="filter-card-body">
+          <input type="text" class="filter-search" placeholder="Cari Skill" id="searchSkill"
+            oninput="filterCheckboxes('skillList', this.value)">
+          <div id="skillList">
+            <label class="filter-option"><input type="checkbox" value="python-programming"> Python Programming</label>
+            <label class="filter-option"><input type="checkbox" value="academic-writing"> Academic Writing</label>
+            <label class="filter-option"><input type="checkbox" value="graphic-design"> Graphic Design</label>
+            <label class="filter-option"><input type="checkbox" value="sql"> SQL</label>
+            <label class="filter-option"><input type="checkbox" value="career-planning"> Career Planning</label>
+            <label class="filter-option"><input type="checkbox" value="cyber-security"> Cyber Security</label>
+            <label class="filter-option"><input type="checkbox" value="web-development"> Web Development</label>
+            <label class="filter-option"><input type="checkbox" value="ui-ux-design"> UI/UX Design</label>
+            <label class="filter-option"><input type="checkbox" value="public-speaking"> Public Speaking</label>
+            <label class="filter-option"><input type="checkbox" value="data-science"> Data Science</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="filter-card">
+        <div class="filter-card-head">Profesi Mentor</div>
+        <div class="filter-card-body">
+          <input type="text" class="filter-search" placeholder="Cari Profesi" id="searchProfesi"
+            oninput="filterCheckboxes('profesiList', this.value)">
+          <div id="profesiList">
+            <label class="filter-option"><input type="checkbox" value="software-engineer"> Software Engineer</label>
+            <label class="filter-option"><input type="checkbox" value="data-analyst"> Data Analyst</label>
+            <label class="filter-option"><input type="checkbox" value="data-scientist"> Data Scientist</label>
+            <label class="filter-option"><input type="checkbox" value="uiux-designer"> UI/UX Designer</label>
+            <label class="filter-option"><input type="checkbox" value="project-manager"> Project Manager</label>
+            <label class="filter-option"><input type="checkbox" value="accountant"> Accountant</label>
+            <label class="filter-option"><input type="checkbox" value="product-manager"> Product Manager</label>
+            <label class="filter-option"><input type="checkbox" value="digital-marketer"> Digital Marketer</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="filter-card">
+        <div class="filter-card-head">Pendidikan Mentor</div>
+        <div class="filter-card-body">
+          <input type="text" class="filter-search" placeholder="Cari Pendidikan" id="searchPendidikan"
+            oninput="filterCheckboxes('pendidikanList', this.value)">
+          <div id="pendidikanList">
+            <label class="filter-option"><input type="checkbox" value="d1-d4"> Diploma (D1–D4)</label>
+            <label class="filter-option"><input type="checkbox" value="s1"> S1 (Sarjana)</label>
+            <label class="filter-option"><input type="checkbox" value="s2"> S2 (Magister)</label>
+            <label class="filter-option"><input type="checkbox" value="s3"> S3 (Doktor)</label>
+            <label class="filter-option"><input type="checkbox" value="sertifikasi"> Sertifikasi Profesional</label>
+            <label class="filter-option"><input type="checkbox" value="sma-smk"> SMA/SMK</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="filter-card">
+        <div class="filter-card-head">Ketersediaan</div>
+        <div class="filter-card-body">
+          <input type="text" class="filter-search" placeholder="Cari Ketersediaan" id="searchKetersediaan"
+            oninput="filterCheckboxes('ketersediaanList', this.value)">
+          <div id="ketersediaanList">
+            <label class="filter-option"><input type="checkbox" value="pagi"> Pagi (06.00–12.00)</label>
+            <label class="filter-option"><input type="checkbox" value="siang"> Siang (12.00–16.00)</label>
+            <label class="filter-option"><input type="checkbox" value="sore"> Sore (16.00–18.00)</label>
+            <label class="filter-option"><input type="checkbox" value="malam"> Malam (18.00–22.00)</label>
+            <label class="filter-option"><input type="checkbox" value="tersedia-sekarang"> Tersedia Sekarang</label>
+            <label class="filter-option"><input type="checkbox" value="tersedia-mingguan"> Tersedia Mingguan</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="filter-card">
+        <div class="filter-card-head">Kisaran Harga</div>
+        <div class="filter-card-body">
+          <div class="price-row">
+            <input type="number" class="price-input" id="priceMin" placeholder="Rp. Min">
+            <span class="price-sep">–</span>
+            <input type="number" class="price-input" id="priceMax" placeholder="Rp. Max">
+          </div>
+          <button class="btn-apply" onclick="applyFilters()">Terapkan</button>
+        </div>
+      </div>
+
+    </aside>
+
+    <section class="results-col">
+
+      <div class="results-info">
+        <span>Menampilkan <strong id="resultCount">3</strong> mentor</span>
+      </div>
+      <div id="mentorList"></div>
+
+      <div class="pagination" id="pagination">
+        <button class="page-btn arrow" id="btnFirst" onclick="goToPage(1)">«</button>
+        <button class="page-btn arrow" id="btnPrev" onclick="changePage(-1)">‹</button>
+        <span id="pageButtons"></span>
+        <button class="page-btn arrow" id="btnNext" onclick="changePage(1)">›</button>
+        <button class="page-btn arrow" id="btnLast" onclick="goToPage(totalPages)">»</button>
+      </div>
+
+    </section>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>Bantuan &amp; Panduan</h4>
+        <ul>
+          <li>Daftar Perusahaan Mentorlink</li>
+          <li>Temukan</li>
+          <li>Hubungi Kami</li>
+          <li>Peta Situs</li>
+          <li>Syarat Penggunaan</li>
+          <li>MentorLink Kebijakan Perlindungan Data Pribadi</li>
+          <li>Laporan</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ikuti Kami:</h4>
+        <div class="social-icons">
+          <div class="social-icon si-fb" title="Facebook">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+            </svg>
+          </div>
+          <div class="social-icon si-ig" title="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none" />
+            </svg>
+          </div>
+          <div class="social-icon si-yt" title="YouTube">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+              <path
+                d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
+              <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#ff0000" />
+            </svg>
+          </div>
+          <div class="social-icon si-tt" title="TikTok">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+              <path
+                d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V9a8.17 8.17 0 0 0 4.77 1.52V7.07a4.85 4.85 0 0 1-1-.38z" />
+            </svg>
+          </div>
+        </div>
+        <p style="font-weight:700;color:var(--text);font-size:.9rem;">PT VisiAsia Indocorp</p>
+        <p>Kawasan Bisnis Terpadu, Jl. Jend. Sudirman No. 52-53, Jakarta Selatan 12190</p>
+        <p>📧 hello@mentorlink.id &nbsp;|&nbsp; 📞 (021) 5050-8888</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      MentorLink © 2026 | Hak Cipta Dilindungi
+    </div>
+  </footer>
+
+  <script src="js/explore.js"></script>
+</body>
+
+</html>

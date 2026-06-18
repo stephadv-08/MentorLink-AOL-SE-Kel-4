@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MentorLink – Verifikasi</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/login-portal.css"/>
+</head>
+<body>
+  <header>
+    <a href="homepage.html" class="header-logo">MentorLink</a>
+  </header>
+
+  <div class="auth-band">
+    <div class="verify-card">
+      <div class="verify-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+      </div>
+
+      <h1>Verifikasi</h1>
+      <p class="verify-subtitle" id="verify-subtitle">
+        Kode verifikasi telah dikirim ke<br>
+        <strong id="destination-label">—</strong>.
+      </p>
+
+      <div class="otp-row">
+        <input class="otp-input" type="text" inputmode="numeric" maxlength="1" placeholder="·" id="otp-0" autocomplete="one-time-code" />
+        <input class="otp-input" type="text" inputmode="numeric" maxlength="1" placeholder="·" id="otp-1" />
+        <input class="otp-input" type="text" inputmode="numeric" maxlength="1" placeholder="·" id="otp-2" />
+        <input class="otp-input" type="text" inputmode="numeric" maxlength="1" placeholder="·" id="otp-3" />
+        <input class="otp-input" type="text" inputmode="numeric" maxlength="1" placeholder="·" id="otp-4" />
+        <input class="otp-input" type="text" inputmode="numeric" maxlength="1" placeholder="·" id="otp-5" />
+      </div>
+      <div class="error-msg" id="otp-err">Masukkan kode verifikasi 6 digit.</div>
+
+      <div class="resend-row">
+        Tidak menerima kode?&nbsp;
+        <span class="resend-link disabled" id="resend-link">Kirim ulang</span>
+        <span class="resend-timer" id="resend-timer">(60)</span>
+      </div>
+
+      <button class="btn-submit" id="btn-action" onclick="handleVerify()">Masuk</button>
+
+      <div class="back-link">
+        Kembali ke <a id="back-link" href="login.html">halaman masuk</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>Bantuan &amp; Panduan</h4>
+        <ul>
+          <li>Daftar Perusahaan Mentorlink</li>
+          <li>Temukan</li>
+          <li>Hubungi Kami</li>
+          <li>Peta Situs</li>
+          <li>Syarat Penggunaan</li>
+          <li>MentorLink Kebijakan Perlindungan Data Pribadi</li>
+          <li>Laporan</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ikuti Kami:</h4>
+        <div class="social-icons">
+          <div class="social-icon si-fb" title="Facebook">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </div>
+          <div class="social-icon si-ig" title="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/></svg>
+          </div>
+          <div class="social-icon si-yt" title="YouTube">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#ff0000"/></svg>
+          </div>
+          <div class="social-icon si-tt" title="TikTok">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V9a8.17 8.17 0 0 0 4.77 1.52V7.07a4.85 4.85 0 0 1-1-.38z"/></svg>
+          </div>
+        </div>
+        <p style="font-weight:700;color:var(--text);font-size:.9rem;">PT VisiAsia Indocorp</p>
+        <p>Kawasan Bisnis Terpadu, Jl. Jend. Sudirman No. 52-53, Jakarta Selatan 12190</p>
+        <p>📧 hello@mentorlink.id &nbsp;|&nbsp; 📞 (021) 5050-8888</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      MentorLink © 2026 | Hak Cipta Dilindungi
+    </div>
+  </footer>
+
+  <script src="../js/verify.js"></script>
+</body>
+</html>
